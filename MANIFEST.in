@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+recursive-include drfformbootstrap4/static *.js *.css *.png *.ico *.eot *.svg *.ttf *.woff *.woff2
+recursive-include drfformbootstrap4/templates *.html
+global-exclude __pycache__
+global-exclude *.py[co]
