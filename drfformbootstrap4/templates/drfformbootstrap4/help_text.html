@@ -1,0 +1,8 @@
+{% if field.help_text %}
+  <small
+    class="form-text text-muted"
+    id="help_{{ field.name }}"
+  >
+    {{ field.help_text|safe }}
+  </small>
+{% endif %}

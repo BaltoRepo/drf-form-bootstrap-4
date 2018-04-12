@@ -10,10 +10,45 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col">
+          <h1>DRF Form Bootstrap 4</h1>
+          <p>
+            This page demonstrates each layout for DRF's <span class="text-monospace">render_form</span> tag. Use it when developing templates.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Vertical</h2>
           <form method="POST" novalidate>
             {% csrf_token %}
             {% render_form serializer template_pack='drfformbootstrap4/vertical' %}
+            <div class="row">
+              <div class="col-6 text-right">
+                <input class="btn btn-primary" type="submit" value="Update">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <h2>Horizontal</h2>
+          <form method="POST" novalidate>
+            {% csrf_token %}
+            {% render_form serializer template_pack='drfformbootstrap4/horizontal' %}
+            <div class="row">
+              <div class="col-6 text-right">
+                <input class="btn btn-primary" type="submit" value="Update">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Inline</h2>
+          <form method="POST" novalidate>
+            {% csrf_token %}
+            {% render_form serializer template_pack='drfformbootstrap4/inline' %}
             <div class="row">
               <div class="col-6 text-right">
                 <input class="btn btn-primary" type="submit" value="Update">

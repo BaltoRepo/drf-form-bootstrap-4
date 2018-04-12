@@ -2,6 +2,8 @@ DEBUG = True
 INSTALLED_APPS = (
     'drfformbootstrap4',
     'rest_framework',
+    'django.contrib.contenttypes',
+    'django.contrib.auth',
 )
 DATABASES = {
     'default': {
