@@ -1,4 +1,4 @@
-<div class="form-group {% if field.errors %}has-error{% endif %}">
+<div class="form-group">
   {% if field.label %}
     <label
       for="id_{{ field.name }}"
@@ -11,16 +11,20 @@
   <input
     name="{{ field.name }}"
     id="id_{{ field.name }}"
-    {% if style.input_type != "file" %}class="form-control"{% endif %}
     type="{{ style.input_type }}"
+    class="
+      {% if style.input_type == "file" %}form-control-file{% else %}form-control{% endif %}
+      {% if field.errors %}is-invalid{% endif %}
+    "
     {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
     {% if field.value is not None %}value="{{ field.value }}"{% endif %}
     {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
-  >
+    {% if field.style.readonly %}readonly{% endif %}
+  > <!-- todo: copy readonly to all types -->
 
   {% if field.errors %}
     {% for error in field.errors %}
-      <span class="help-block">{{ error }}</span>
+      <div class="invalid-feedback">{{ error }}</div>
     {% endfor %}
   {% endif %}
 

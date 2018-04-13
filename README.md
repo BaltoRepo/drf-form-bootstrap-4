@@ -20,6 +20,12 @@ pip install --upgrade .
 
 TODO
 
+Fields with `read_only=True` are not shown at all. To display a field as read-only in the form, use:
+
+```
+style={'readonly': 'True'}
+```
+
 ## Development
 
 ```

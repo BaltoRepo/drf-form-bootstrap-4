@@ -12,6 +12,10 @@ class SnippetSerializer(serializers.Serializer):
         help_text='Title of the snippet'
     )
     description = serializers.CharField(required=False, allow_blank=True, max_length=100, help_text='Description of snippet')
+    readonly = serializers.CharField(
+        required=False, allow_blank=True, max_length=100,
+        help_text='A read-only field', style={'readonly': True}
+    )
     code = serializers.CharField(style={'base_template': 'textarea.html'}, help_text='Enter the code snippet')
     linenos = serializers.BooleanField(required=False, help_text='Number of lines')
     language = serializers.ChoiceField(choices=LANGUAGE_CHOICES, default='python', allow_blank=True, help_text='Language of the snippet')
