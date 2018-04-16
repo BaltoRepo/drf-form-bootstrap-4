@@ -20,11 +20,25 @@ pip install --upgrade .
 
 TODO
 
-Fields with `read_only=True` are not shown at all. To display a field as read-only in the form, use:
+Fields with `read_only=True` are included in the form but shown with read-only styling.
+
+To display a field as text instead of as a field:
 
 ```
-style={'readonly': 'True'}
+style={'class': 'form-control-plaintext'}
 ```
+
+For inline checkboxes and radio buttons:
+
+```
+style={'inline': True}
+```
+
+TODO: ensure all field types and style options from DRF are supported.
+
+## Differences from DRF
+
+* Fields with `read_only=True` are included in the form.
 
 ## Development
 

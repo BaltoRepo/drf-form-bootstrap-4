@@ -1,15 +1,21 @@
-<div class="form-group {% if field.errors %}has-error{% endif %}">
+<div class="form-group {% if field.errors %}is-invalid{% endif %}">
   {% if field.label %}
-    <label {% if style.hide_label %}class="sr-only"{% endif %}>
+    <label
+      for="id_{{ field.name }}"
+      {% if style.hide_label %}class="sr-only"{% endif %}
+    >
       {{ field.label }}
     </label>
   {% endif %}
 
-  <textarea name="{{ field.name }}" class="form-control" {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %} {% if style.rows %}rows="{{ style.rows }}"{% endif %}>{% if field.value %}{{ field.value }}{% endif %}</textarea>
+  <textarea
+    name="{{ field.name }}"
+    id="id_{{ field.name }}"
+    class="form-control"
+    {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
+    {% if style.rows %}rows="{{ style.rows }}"{% endif %}
+  >{% if field.value %}{{ field.value }}{% endif %}</textarea>
 
-  {% if field.errors %}
-    {% for error in field.errors %}<span class="help-block">{{ error }}</span>{% endfor %}
-  {% endif %}
-
+  {% include 'drfformbootstrap4/error_text.html' %}
   {% include 'drfformbootstrap4/help_text.html' %}
 </div>

@@ -1,6 +1,6 @@
 {% load rest_framework %}
 
-<div class="form-group {% if field.errors %}has-error{% endif %}">
+<div class="form-group {% if field.errors %}is-invalid{% endif %}">
   {% if field.label %}
     <label {% if style.hide_label %}class="sr-only"{% endif %}>{{ field.label }}</label>
   {% endif %}
@@ -25,11 +25,6 @@
     {% endfor %}
   {% endif %}
 
-  {% if field.errors %}
-    {% for error in field.errors %}
-      <span class="help-block">{{ error }}</span>
-    {% endfor %}
-  {% endif %}
-
+  {% include 'drfformbootstrap4/error_text.html' %}
   {% include 'drfformbootstrap4/help_text.html' %}
 </div>

@@ -13,20 +13,19 @@
     id="id_{{ field.name }}"
     type="{{ style.input_type }}"
     class="
-      {% if style.input_type == "file" %}form-control-file{% else %}form-control{% endif %}
+      {% if style.input_type == "file" %}
+        form-control-file
+      {% else %}
+        {{ field.style.class|default:'form-control' }}
+      {% endif %}
       {% if field.errors %}is-invalid{% endif %}
     "
     {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
     {% if field.value is not None %}value="{{ field.value }}"{% endif %}
     {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
-    {% if field.style.readonly %}readonly{% endif %}
+    {% if field.read_only %}readonly{% endif %}
   > <!-- todo: copy readonly to all types -->
 
-  {% if field.errors %}
-    {% for error in field.errors %}
-      <div class="invalid-feedback">{{ error }}</div>
-    {% endfor %}
-  {% endif %}
-
+  {% include 'drfformbootstrap4/error_text.html' %}
   {% include 'drfformbootstrap4/help_text.html' %}
 </div>
