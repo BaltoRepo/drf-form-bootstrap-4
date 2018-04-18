@@ -13,6 +13,14 @@ class DemoSerializer(serializers.Serializer):
         required=False, allow_blank=True, max_length=100,
         help_text='Character, not required'
     )
+    char_input_group = serializers.CharField(
+        required=False, allow_blank=True, max_length=100,
+        help_text='Input group with prepend and append',
+        style={
+            'prepend': 'prepend',
+            'append': 'append',
+        }
+    )
     char_readonly_field = serializers.CharField(
         initial='the read-only value',
         help_text='Character, read-only field',
@@ -33,15 +41,21 @@ class DemoSerializer(serializers.Serializer):
     )
     boolean_field = serializers.BooleanField(required=False, help_text='Boolean field')
     choice_field = serializers.ChoiceField(
-        choices=DEMO_CHOICES, default='python',
+        choices=DEMO_CHOICES, default='Lorem',
         allow_blank=True,
-        help_text='Choice field, blank allowed'
+        help_text='Choice field, blank allowed, select widget'
     )
     choice_radio_field = serializers.ChoiceField(
-        choices=DEMO_CHOICES, default='python',
+        choices=DEMO_CHOICES, default='Lorem',
         allow_blank=True,
-        help_text='Choice as radio fields',
+        help_text='Choice field, blank allowed, radio widget',
         style={'base_template': 'radio.html'}
+    )
+    choice_radio_field_inline = serializers.ChoiceField(
+        choices=DEMO_CHOICES, default='Lorem',
+        allow_blank=True,
+        help_text='Choice field, blank allowed, radio widget, inline',
+        style={'base_template': 'radio.html', 'inline': True}
     )
     multiple_choice_field = serializers.MultipleChoiceField(
         choices=DEMO_CHOICES,
@@ -51,6 +65,11 @@ class DemoSerializer(serializers.Serializer):
         choices=DEMO_CHOICES,
         help_text='Multiple choice as checkbox fields',
         style={'base_template': 'checkbox_multiple.html'}
+    )
+    multiple_choice_checkbox_field_inline = serializers.MultipleChoiceField(
+        choices=DEMO_CHOICES,
+        help_text='Multiple choice as checkbox fields, inline',
+        style={'base_template': 'checkbox_multiple.html', 'inline': True}
     )
     email_field = serializers.EmailField(
         max_length=None, min_length=None,

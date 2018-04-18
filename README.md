@@ -2,6 +2,15 @@
 
 Bootstrap 4 templates for Django Rest Framework `render_form` tag. 
 
+TODO:
+* error states
+* ensure all field types in vertical have been updated
+* ensure all field types and style options from DRF are supported.
+* update horizontal, inline
+* add basic docs
+* upload to pypi, add 'make upload'
+* make PR to DRF docs
+
 ## Requirements
 
 TODO Django, DRF, Python versions
@@ -20,8 +29,6 @@ pip install --upgrade .
 
 TODO
 
-Fields with `read_only=True` are included in the form but shown with read-only styling.
-
 To display a field as text instead of as a field:
 
 ```
@@ -34,17 +41,30 @@ For inline checkboxes and radio buttons:
 style={'inline': True}
 ```
 
-TODO: ensure all field types and style options from DRF are supported.
+prepend/append text for inputs:
 
-## Differences from DRF
-
-* Fields with `read_only=True` are included in the form.
+```
+style={
+    'prepend': 'prepend',
+    'append': 'append',
+}
+```
 
 ## Development
+
+Demo page showing variety of form fields and layouts is available with:
+
+```
+make runserver
+```
+
+Run tests:
 
 ```
 make test
 ```
+
+Make a GitHub pull request.
 
 ## License
 

@@ -4,12 +4,21 @@
 
 <div class="form-group {% if field.errors %}is-invalid{% endif %}">
   {% if field.label %}
-    <label {% if style.hide_label %}class="sr-only"{% endif %}>
+    <label
+      for="id_{{ field.name }}"
+      {% if style.hide_label %}class="sr-only"{% endif %}
+    >
       {{ field.label }}
     </label>
   {% endif %}
 
-  <select multiple {{ field.choices|yesno:",disabled" }} class="form-control" name="{{ field.name }}">
+  <select
+    multiple
+    {{ field.choices|yesno:",disabled" }}
+    class="form-control"
+    name="{{ field.name }}"
+    id="id_{{ field.name }}"
+  >
     {% for select in field.iter_options %}
         {% if select.start_option_group %}
           <optgroup label="{{ select.label }}">

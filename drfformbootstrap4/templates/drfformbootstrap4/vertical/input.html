@@ -8,6 +8,14 @@
     </label>
   {% endif %}
 
+  {% if field.style.prepend or field.style.append %}
+    <div class="input-group">
+    {% if field.style.prepend %}
+      <div class="input-group-prepend">
+        <span class="input-group-text">{{ field.style.prepend }}</span>
+      </div>
+    {% endif %}
+  {% endif %}
   <input
     name="{{ field.name }}"
     id="id_{{ field.name }}"
@@ -23,8 +31,16 @@
     {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
     {% if field.value is not None %}value="{{ field.value }}"{% endif %}
     {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
-    {% if field.read_only %}readonly{% endif %}
-  > <!-- todo: copy readonly to all types -->
+    {% if field.label %}aria-label="{{ field.label }}"{% endif %}
+  >
+  {% if field.style.prepend or field.style.append %}
+    {% if field.style.append %}
+      <div class="input-group-append">
+        <span class="input-group-text">{{ field.style.append }}</span>
+      </div>
+    {% endif %}
+    </div>
+  {% endif %}
 
   {% include 'drfformbootstrap4/error_text.html' %}
   {% include 'drfformbootstrap4/help_text.html' %}
