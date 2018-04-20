@@ -1,5 +1,11 @@
 {% if field.errors %}
+  {% comment %}
+  Here we apply style="display: block;" because the default Bootstrap 4 `display` for invalid-feedback is `none`,
+  and their normal way to make the div visible depends on a
+  sibling selector (.form-control.is-invalid~.invalid-feedback) that doesn't apply well to radio and checkbox fields
+  because it puts a red border around a much larger area than just the field. Hopefully this doesn't break too much...
+  {% endcomment %}
   {% for error in field.errors %}
-    <div class="invalid-feedback">{{ error }}</div>
+    <div class="invalid-feedback" style="display: block;">{{ error }}</div>
   {% endfor %}
 {% endif %}

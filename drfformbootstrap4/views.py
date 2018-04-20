@@ -7,7 +7,6 @@ from django.shortcuts import redirect
 
 class DemoForms(APIView):
     renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'drfformbootstrap4/demo/forms.html'
 
     def get(self, request):
         serializer = DemoSerializer()
@@ -18,3 +17,15 @@ class DemoForms(APIView):
         if not serializer.is_valid():
             return Response({'serializer': serializer})
         return redirect('root')
+
+
+class DemoVertical(DemoForms):
+    template_name = 'drfformbootstrap4/demo/vertical.html'
+
+
+class DemoHorizontal(DemoForms):
+    template_name = 'drfformbootstrap4/demo/horizontal.html'
+
+
+class DemoInline(DemoForms):
+    template_name = 'drfformbootstrap4/demo/inline.html'

@@ -1,21 +1,10 @@
-<div class="form-group {% if field.errors %}is-invalid{% endif %}">
-  <div class="form-check {% if field.style.inline %}form-check-inline{% endif %}">
-    <input
-      type="checkbox"
-      name="{{ field.name }}"
-      id="id_{{ field.name }}"
-      class="form-check-input"
-      value=""
-      {% if field.value %}checked{% endif %}
-    >
-    <label
-      for="id_{{ field.name }}"
-      class="form-check-label"
-    >
-      {% if field.label %}{{ field.label }}{% endif %}
-    </label>
+<div class="form-group">
+  <div class="form-check">
+    {% include 'drfformbootstrap4/checkbox.html' %}
+    {% with label_class='form-check-label' %}
+      {% include 'drfformbootstrap4/label.html' %}
+    {% endwith %}
+    {% include 'drfformbootstrap4/error_text.html' %}
+    {% include 'drfformbootstrap4/help_text.html' %}
   </div>
-
-  {% include 'drfformbootstrap4/error_text.html' %}
-  {% include 'drfformbootstrap4/help_text.html' %}
 </div>

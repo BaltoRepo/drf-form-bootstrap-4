@@ -1,0 +1,30 @@
+{% extends 'drfformbootstrap4/demo/base.html' %}
+{% load rest_framework %}
+
+{% block title %}Inline{% endblock %}
+{% block h1 %}Inline{% endblock %}
+
+{% block intro %}
+<p><a href="{% url 'root' %}">Root</a></p>
+<p>To see validation error states, submit the form.</p>
+<p>
+  <a href="" class="btn btn-primary">Reset</a>
+</p>
+{% endblock %}
+
+{% block rows %}
+<div class="row">
+  <div class="col">
+    <h2>Inline</h2>
+    <form method="POST" novalidate>
+      {% csrf_token %}
+      {% render_form serializer template_pack='drfformbootstrap4/inline' %}
+      <div class="row">
+        <div class="col text-right">
+          <input class="btn btn-primary" type="submit" value="Submit">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

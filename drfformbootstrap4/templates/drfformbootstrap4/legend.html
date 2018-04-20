@@ -1,0 +1,8 @@
+{% if field.label %}
+  <legend
+    for="id_{{ field.name }}"
+    class="{{ legend_class }}{% if style.hide_label %} sr-only{% endif %}"
+  >
+    {{ field.label }}
+  </legend>
+{% endif %}

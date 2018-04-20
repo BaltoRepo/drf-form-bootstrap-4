@@ -1,39 +1,21 @@
 {% load rest_framework %}
 
-<div class="form-group">
+<div class="form-group row {% if field.errors %}is-invalid{% endif %}">
   {% if field.label %}
-    <label class="col-sm-2 control-label {% if style.hide_label %}sr-only{% endif %}">
-      {{ field.label }}
-    </label>
+    <div>
+      <label {% if style.hide_label %}class="sr-only"{% endif %}>{{ field.label }}</label>
+    </div>
   {% endif %}
 
-  <div class="col-sm-10">
-    {% if style.inline %}
-      {% for key, text in field.choices|items %}
-        <label class="checkbox-inline">
-          <input type="checkbox" name="{{ field.name }}" value="{{ key }}" {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}>
-          {{ text }}
-        </label>
-      {% endfor %}
-    {% else %}
-      {% for key, text in field.choices|items %}
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="{{ field.name }}" value="{{ key }}" {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}>
-            {{ text }}
-          </label>
-        </div>
-      {% endfor %}
-    {% endif %}
+  {% for key, text in field.choices|items %}
+    <div class="form-check {% if field.style.inline %}form-check-inline{% endif %}">
+      <label>
+        <input type="checkbox" name="{{ field.name }}" value="{{ key }}" {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}>
+        {{ text }}
+      </label>
+    </div>
+  {% endfor %}
 
-  {% if field.errors %}
-    {% for error in field.errors %}
-      <span class="help-block">{{ error }}</span>
-    {% endfor %}
-  {% endif %}
-
-  {% if field.help_text %}
-    <span class="help-block">{{ field.help_text|safe }}</span>
-  {% endif %}
-  </div>
+  {% include 'drfformbootstrap4/error_text.html' %}
+  {% include 'drfformbootstrap4/help_text.html' %}
 </div>

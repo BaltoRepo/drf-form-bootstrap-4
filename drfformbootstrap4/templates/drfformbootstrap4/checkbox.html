@@ -1,0 +1,10 @@
+<input
+  type="checkbox"
+  name="{{ field.name }}"
+  id="id_{{ field.name }}"
+  class="
+    form-check-input
+    {% if field.errors %}is-invalid{% endif %}
+  "
+  {% if field.value %}checked{% endif %}
+>

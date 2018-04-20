@@ -3,9 +3,6 @@
 Bootstrap 4 templates for Django Rest Framework `render_form` tag. 
 
 TODO:
-* error states
-* ensure all field types in vertical have been updated
-* ensure all field types and style options from DRF are supported.
 * update horizontal, inline
 * add basic docs
 * upload to pypi, add 'make upload'

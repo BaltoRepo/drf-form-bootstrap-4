@@ -1,0 +1,8 @@
+{% if field.label %}
+  <label
+    for="id_{{ field.name }}"
+    class="{{ label_class }}{% if style.hide_label %} sr-only{% endif %}"
+  >
+    {{ field.label }}
+  </label>
+{% endif %}

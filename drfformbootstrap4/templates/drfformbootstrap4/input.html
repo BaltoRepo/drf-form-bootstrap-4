@@ -1,0 +1,34 @@
+{% if field.style.prepend or field.style.append %}
+  <div class="input-group">
+{% endif %}
+{% if field.style.prepend %}
+  <div class="input-group-prepend">
+    <span class="input-group-text">{{ field.style.prepend }}</span>
+  </div>
+{% endif %}
+<input
+  name="{{ field.name }}"
+  id="id_{{ field.name }}"
+  type="{{ style.input_type }}"
+  class="
+    {% if style.input_type == "file" %}
+      form-control-file
+    {% else %}
+      {{ field.style.class|default:'form-control' }}
+    {% endif %}
+    {% if field.errors %}is-invalid{% endif %}
+  "
+  {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %}
+  {% if field.value is not None %}value="{{ field.value }}"{% endif %}
+  {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}
+  {% if field.label %}aria-label="{{ field.label }}"{% endif %}
+>
+{% if field.style.append %}
+  <div class="input-group-append">
+    <span class="input-group-text">{{ field.style.append }}</span>
+  </div>
+{% endif %}
+
+{% if field.style.prepend or field.style.append %}
+  </div>
+{% endif %}

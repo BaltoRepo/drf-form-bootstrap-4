@@ -1,0 +1,15 @@
+{% extends 'drfformbootstrap4/demo/base.html' %}
+
+{% block title %}Demo{% endblock %}
+{% block h1 %}Demo{% endblock %}
+
+{% block intro %}
+<p>
+  This page demonstrates each layout for DRF's <span class="text-monospace">render_form</span> tag. Use it when developing templates.
+</p>
+<ul>
+  <li><a href="{% url 'vertical' %}">Vertical</a></li>
+  <li><a href="{% url 'horizontal' %}">Horizontal</a></li>
+  <li><a href="{% url 'inline' %}">Inline</a></li>
+</ul>
+{% endblock %}
