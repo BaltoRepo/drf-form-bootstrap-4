@@ -1,9 +1,4 @@
-<div class="form-group {% if field.errors %}has-error{% endif %}">
-  {% if field.label %}
-    <label class="sr-only">
-      {{ field.label }}
-    </label>
-  {% endif %}
-
-  <input name="{{ field.name }}" {% if style.input_type != "file" %}class="form-control"{% endif %} type="{{ style.input_type }}" {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %} {% if field.value is not None %}value="{{ field.value }}"{% endif %} {% if style.autofocus and style.input_type != "hidden" %}autofocus{% endif %}>
-</div>
+{% include 'drfformbootstrap4/label.html' %}
+{% include 'drfformbootstrap4/input.html' %}
+{% include 'drfformbootstrap4/error_text.html' %}
+{% include 'drfformbootstrap4/help_text.html' %}

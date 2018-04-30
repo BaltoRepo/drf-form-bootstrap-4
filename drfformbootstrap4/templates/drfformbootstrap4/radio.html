@@ -3,7 +3,7 @@
 {% trans "None" as none_choice %}
 
 {% if field.allow_null or field.allow_blank %}
-  <div class="form-check {% if field.style.inline %}form-check-inline{% endif %} {% if field.errors %}is-invalid{% endif %}">
+  <div class="form-check pl-0{% if field.style.inline %} form-check-inline{% endif %}{% if field.errors %} is-invalid{% endif %}">
     <label>
       <input type="radio" name="{{ field.name }}" value="" {% if not field.value %}checked{% endif %} />
       {{ none_choice }}
@@ -12,7 +12,7 @@
 {% endif %}
 
 {% for key, text in field.choices|items %}
-  <div class="form-check {% if field.style.inline %}form-check-inline{% endif %} {% if field.errors %}is-invalid{% endif %}">
+  <div class="form-check pl-0{% if field.style.inline %} form-check-inline{% endif %}{% if field.errors %} is-invalid{% endif %}">
     <label>
       <input type="radio" name="{{ field.name }}" value="{{ key }}" {% if key|as_string == field.value|as_string %}checked{% endif %}>
       {{ text }}

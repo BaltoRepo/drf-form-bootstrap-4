@@ -1,4 +1,6 @@
 {% load rest_framework %}
 {% for field in form %}
-  {% render_field field style=style %}
+  {% if not field.read_only %}
+    {% render_field field style=style %}
+  {% endif %}
 {% endfor %}

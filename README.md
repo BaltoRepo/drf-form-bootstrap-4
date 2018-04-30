@@ -47,6 +47,10 @@ style={
 }
 ```
 
+### Inline Form
+
+For [inline forms](https://getbootstrap.com/docs/4.1/components/forms/#inline-forms), add `class="form-inline"` to the `<form>`.
+
 ## Development
 
 Demo page showing variety of form fields and layouts is available with:

@@ -1,47 +1,7 @@
-{% load i18n %}
-{% load rest_framework %}
-{% trans "None" as none_choice %}
+<div class="form-group">
+  {% include 'drfformbootstrap4/label.html' %}
 
-<div class="form-group {% if field.errors %}is-invalid{% endif %}">
-  {% if field.label %}
-    <label class="sr-only">
-      {{ field.label }}
-    </label>
-  {% endif %}
-
-  {% if field.allow_null or field.allow_blank %}
-    <div class="radio">
-      <input
-        type="radio"
-        id="id_{{ field.name }}"
-        name="{{ field.name }}"
-        value=""
-        {% if not field.value %}checked{% endif %}
-      >
-      <label
-        for="id_{{ field.name }}"
-        class="form-check-label"
-      >
-        {{ none_choice }}
-      </label>
-    </div>
-  {% endif %}
-
-  {% for key, text in field.choices|items %}
-    <div class="radio">
-      <input
-        type="radio"
-        id="id_{{ field.name }}"
-        name="{{ field.name }}"
-        value="{{ key }}"
-        {% if key|as_string == field.value|as_string %}checked{% endif %}
-      >
-      <label
-        for="id_{{ field.name }}"
-        class="form-check-label"
-      >
-        {{ text }}
-      </label>
-    </div>
-  {% endfor %}
+  {% include 'drfformbootstrap4/radio.html' %}
+  {% include 'drfformbootstrap4/error_text.html' %}
+  {% include 'drfformbootstrap4/help_text.html' %}
 </div>

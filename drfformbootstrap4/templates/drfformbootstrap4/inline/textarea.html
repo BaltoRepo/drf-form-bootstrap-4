@@ -1,9 +1,4 @@
-<div class="form-group {% if field.errors %}has-error{% endif %}">
-  {% if field.label %}
-    <label class="sr-only">
-      {{ field.label }}
-    </label>
-  {% endif %}
-
-  <input name="{{ field.name }}" type="text" class="form-control" {% if style.placeholder %}placeholder="{{ style.placeholder }}"{% endif %} {% if field.value %}value="{{ field.value }}"{% endif %}>
-</div>
+{% include 'drfformbootstrap4/label.html' %}
+{% include 'drfformbootstrap4/textarea.html' %}
+{% include 'drfformbootstrap4/error_text.html' %}
+{% include 'drfformbootstrap4/help_text.html' %}
