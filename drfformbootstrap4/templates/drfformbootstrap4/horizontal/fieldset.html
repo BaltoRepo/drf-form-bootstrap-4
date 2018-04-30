@@ -1,12 +1,12 @@
 {% load rest_framework %}
-<fieldset>
-  {% if field.label %}
-    <legend {% if style.hide_label %}class="sr-only"{% endif %}>
-      {{ field.label }}
-    </legend>
-  {% endif %}
+<fieldset class="form-group">
+  <div class="row">
+    {% with legend_class='col-sm-3 col-form-label' %}
+      {% include 'drfformbootstrap4/legend.html' %}
+    {% endwith %}
 
-  {% for nested_field in field %}
-      {% render_field nested_field style=style %}
-  {% endfor %}
+    {% for nested_field in field %}
+        {% render_field nested_field style=style %}
+    {% endfor %}
+  </div>
 </fieldset>

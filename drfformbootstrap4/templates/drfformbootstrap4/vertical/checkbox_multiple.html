@@ -1,21 +1,9 @@
-{% load rest_framework %}
-
 <div class="form-group {% if field.errors %}is-invalid{% endif %}">
   {% with label_class='form-check-label' %}
     {% include 'drfformbootstrap4/label.html' %}
   {% endwith %}
 
-  <div>
-    {% for key, text in field.choices|items %}
-      <div class="form-check {% if field.style.inline %}form-check-inline{% endif %}">
-        <label>
-          <input type="checkbox" name="{{ field.name }}" value="{{ key }}" {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}>
-          {{ text }}
-        </label>
-      </div>
-    {% endfor %}
-  </div>
-
+  {% include 'drfformbootstrap4/checkbox_multiple.html' %}
   {% include 'drfformbootstrap4/error_text.html' %}
   {% include 'drfformbootstrap4/help_text.html' %}
 </div>

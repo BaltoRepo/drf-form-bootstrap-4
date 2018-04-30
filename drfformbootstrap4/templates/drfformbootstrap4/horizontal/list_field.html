@@ -1,7 +1,9 @@
 <div class="form-group row">
-  {% if field.label %}
-    <label {% if style.hide_label %}class="sr-only"{% endif %}>{{ field.label }}</label>
-  {% endif %}
+  {% with label_class='col-sm-3 col-form-label' %}
+    {% include 'drfformbootstrap4/label.html' %}
+  {% endwith %}
 
-  <p class="form-control-static">Lists are not currently supported in HTML input.</p>
+  <div class="col-sm-9">
+    <p class="form-control-static">Lists are not currently supported in HTML input.</p>
+  </div>
 </div>

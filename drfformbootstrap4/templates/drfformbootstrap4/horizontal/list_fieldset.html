@@ -1,9 +1,11 @@
-<fieldset>
-  {% if field.label %}
-    <legend {% if style.hide_label %}class="sr-only"{% endif %}>
-      {{ field.label }}
-    </legend>
-  {% endif %}
+<fieldset class="form-group">
+  <div class="row">
+    {% with legend_class='col-sm-3 col-form-label' %}
+      {% include 'drfformbootstrap4/legend.html' %}
+    {% endwith %}
 
-  <p>Lists are not currently supported in HTML input.</p>
+    <div class="col-sm-9">
+      <p>Lists are not currently supported in HTML input.</p>
+    </div>
+  </div>
 </fieldset>

@@ -1,21 +1,13 @@
 {% load rest_framework %}
 
 <div class="form-group row {% if field.errors %}is-invalid{% endif %}">
-  {% if field.label %}
-    <div>
-      <label {% if style.hide_label %}class="sr-only"{% endif %}>{{ field.label }}</label>
-    </div>
-  {% endif %}
+  {% with legend_class='col-sm-3 pt-0 col-form-label' %}
+    {% include 'drfformbootstrap4/legend.html' %}
+  {% endwith %}
 
-  {% for key, text in field.choices|items %}
-    <div class="form-check {% if field.style.inline %}form-check-inline{% endif %}">
-      <label>
-        <input type="checkbox" name="{{ field.name }}" value="{{ key }}" {% if key|as_string in field.value|as_list_of_strings %}checked{% endif %}>
-        {{ text }}
-      </label>
-    </div>
-  {% endfor %}
-
-  {% include 'drfformbootstrap4/error_text.html' %}
-  {% include 'drfformbootstrap4/help_text.html' %}
+  <div class="col-sm-9">
+    {% include 'drfformbootstrap4/checkbox_multiple.html' %}
+    {% include 'drfformbootstrap4/error_text.html' %}
+    {% include 'drfformbootstrap4/help_text.html' %}
+  </div>
 </div>
