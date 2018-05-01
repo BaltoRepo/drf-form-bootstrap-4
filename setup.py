@@ -8,7 +8,8 @@ setup(
     name='drf-form-bootstrap-4',
     version='0.1',
     packages=['drfformbootstrap4'],
-    description='Bootstrap 4 templates for Django Rest Framework `render_form` tag',
+    description='Bootstrap 4 templates for Django Rest '
+                'Framework `render_form` tag',
     long_description=README,
     author='Matt Fox',
     author_email='matt@tansen.ca',
@@ -17,9 +18,6 @@ setup(
     install_requires=[
         'Django',
         'djangorestframework',
-    ],
-    tests_require=[
-        'django-fake-model',
     ],
     zip_safe=False,  # Zipping prevents Django from finding migrations.
     include_package_data=True,

@@ -1,0 +1,18 @@
+{% if form.initial_data and form.errors %}
+<div class="row">
+  <div class="col">
+    <div class="alert alert-danger" role="alert">
+      <p{% if not form.errors.non_field_errors %} class="mb-0"{% endif %}>
+        There was a problem validating the form. Please review the messages below.
+      </p>
+      {% if form.errors.non_field_errors %}
+        <ul class="mb-0">
+        {% for error in form.errors.non_field_errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

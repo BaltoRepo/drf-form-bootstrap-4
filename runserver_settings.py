@@ -2,8 +2,10 @@ DEBUG = True
 INSTALLED_APPS = (
     'drfformbootstrap4',
     'rest_framework',
+    'django.contrib.staticfiles',
     'django.contrib.contenttypes',
     'django.contrib.auth',
+    'debug_toolbar',
 )
 DATABASES = {
     'default': {
@@ -25,3 +27,9 @@ TEMPLATES = [
         },
     },
 ]
+STATIC_URL = '/static/'
+
+MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+]
+INTERNAL_IPS = ['127.0.0.1', ]

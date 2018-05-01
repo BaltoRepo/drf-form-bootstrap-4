@@ -15,24 +15,16 @@ clean-pyc: ## remove Python file artifacts
 
 clean: clean-build clean-pyc
 
-coverage: ## check code coverage quickly with the default Python
-	# Coverage config file at .coveragerc
-	coverage run --source drfformfromserializer django-admin.py test --settings=test_settings
-	coverage report -m
-
 install: clean
 	python setup.py install
 
 lint: ## check style with flake8
 	flake8 .
 
-test: clean
-	PYTHONPATH=$(shell pwd) django-admin test . --settings=test_settings
-
 runserver: clean
 	PYTHONPATH=$(shell pwd) django-admin runserver --settings=runserver_settings
 
-sdist: test
+sdist: clean
 	python setup.py sdist
 
 upload: lint sdist

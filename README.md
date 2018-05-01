@@ -3,7 +3,6 @@
 Bootstrap 4 templates for [Django Rest Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
 
 TODO:
-* form errors
 * add basic docs
 * upload to pypi, add 'make upload'
 * make PR to DRF docs
@@ -20,12 +19,12 @@ From PyPI:
 todo
 ```
 
-Add 'TODO' to your `INSTALLED_APPS` setting.
+Add `drfformbootstrap4` to your `INSTALLED_APPS` setting.
 
 ```
 INSTALLED_APPS = (
     ...
-    'todo',
+    'drfformbootstrap4',
 )
 ```
 
@@ -75,7 +74,7 @@ Note that `inline` is less well-tested than the others, and at the moment the er
       </div>
     </form>
 
-### Additional options
+### Additional Options
 
 To display a field as text instead of as a field:
 
@@ -89,7 +88,7 @@ For inline checkboxes and radio buttons:
 style={'inline': True}
 ```
 
-prepend/append text for inputs:
+Prepend/append text for inputs:
 
 ```
 style={
@@ -100,12 +99,24 @@ style={
 
 ## Development
 
-Pretty standard: for this repo, make changes, and make a GitHub pull request.
+Pretty standard: fork this repo, make changes, make a GitHub pull request.
 
-There are demo pages showing variety of form fields and layouts. Use it for development by running:
+There are demo pages showing a variety of form fields and layouts. To use it, first install its dependencies:
+
+```
+pip install django-debug-toolbar
+```
+
+Then run the server:
 
 ```
 make runserver
+```
+
+When using this `runserver`, you don't need to install `drfformbootstrap4` into your virtualenv before seeing changes. However if you want to see your changes reflected in a different application using the same virtualenv, install it with:
+
+```
+pip install .
 ```
 
 ## License

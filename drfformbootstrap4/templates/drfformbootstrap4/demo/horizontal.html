@@ -16,7 +16,7 @@
 <div class="row">
   <div class="col">
     <h2>Horizontal</h2>
-    <form method="POST" novalidate>
+    <form method="POST" novalidate enctype="multipart/form-data">
       {% csrf_token %}
       {% render_form serializer template_pack='drfformbootstrap4/horizontal' %}
       <div class="row">

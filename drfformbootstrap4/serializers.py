@@ -1,3 +1,6 @@
+"""
+These resources are for the demo page used in development.
+"""
 from rest_framework import serializers
 from django.utils import timezone
 
@@ -102,7 +105,8 @@ class DemoSerializer(serializers.Serializer):
         validators=[always_invalid]
     )
     file_field = serializers.FileField(
-        max_length=None, allow_empty_file=False,
+        required=False,
+        max_length=None, allow_empty_file=True,
         help_text='File upload field',
         validators=[always_invalid]
     )
@@ -110,3 +114,7 @@ class DemoSerializer(serializers.Serializer):
         default=timezone.now, help_text='You should not see this rendered!',
         validators=[always_invalid]
     )
+
+    def validate(self, data):
+        """This is only run if no fields have errors."""
+        raise serializers.ValidationError('This is a non-field error.')
