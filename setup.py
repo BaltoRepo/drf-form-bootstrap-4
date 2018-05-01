@@ -11,6 +11,7 @@ setup(
     description='Bootstrap 4 templates for Django Rest '
                 'Framework `render_form` tag',
     long_description=README,
+    long_description_content_type='text/markdown',
     author='Matt Fox',
     author_email='matt@tansen.ca',
     url='https://github.com/mattfox/drf-form-bootstrap-4',
