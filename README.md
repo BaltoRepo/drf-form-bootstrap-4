@@ -11,7 +11,7 @@ Tested with Django 2.0 and Python 3.6. Probably works in earlier versions.
 From PyPI:
 
 ```
-todo
+pip install drf-form-bootstrap-4 
 ```
 
 Add `drfformbootstrap4` to your `INSTALLED_APPS` setting.
