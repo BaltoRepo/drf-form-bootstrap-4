@@ -2,11 +2,6 @@
 
 Bootstrap 4 templates for [Django Rest Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
 
-TODO:
-* add basic docs
-* upload to pypi, add 'make upload'
-* make PR to DRF docs
-
 ## Requirements
 
 Tested with Django 2.0 and Python 3.6. Probably works in earlier versions.
