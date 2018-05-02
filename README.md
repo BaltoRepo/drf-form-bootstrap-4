@@ -1,17 +1,19 @@
 # drf-form-bootstrap-4
 
-Bootstrap 4 templates for [Django Rest Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
+[![PyPI version](https://badge.fury.io/py/drf-form-bootstrap-4.svg)](https://badge.fury.io/py/drf-form-bootstrap-4)
+
+Bootstrap 4 templates for [Django REST Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
 
 ## Requirements
 
-Tested with Django 2.0 and Python 3.6. Probably works in earlier versions.
+Tested with Django 2.0, DRF 3.8, Python 3.6. Almost certainly works in earlier versions.
 
 ## Installation
 
 From PyPI:
 
 ```
-pip install drf-form-bootstrap-4 
+pip install drf-form-bootstrap-4
 ```
 
 Add `drfformbootstrap4` to your `INSTALLED_APPS` setting.
@@ -25,7 +27,7 @@ INSTALLED_APPS = (
 
 ## Usage
 
-Like the template packs in Django Rest Framework, this supports three layouts:
+Like the template packs in Django REST Framework, this supports three layouts:
 
 ##### Vertical
 
@@ -57,7 +59,7 @@ Like the template packs in Django Rest Framework, this supports three layouts:
 
 ##### Inline
 
-Note that `inline` is less well-tested than the others, and at the moment the error states don't  render properly. If this is a problem for you, submit an issue (or even better, a pull request).
+Note that `inline` is less well-tested than the others, and at the moment the error states don't  render properly. If this is a problem for you, [add a comment to this issue](https://github.com/mattfox/drf-form-bootstrap-4/issues/2).
 
     <form method="POST" novalidate class="form-inline">
       {% csrf_token %}
@@ -87,8 +89,8 @@ Prepend/append text for inputs:
 
 ```
 style={
-    'prepend': 'prepend',
-    'append': 'append',
+    'prepend': 'text to prepend',
+    'append': 'text to append',
 }
 ```
 
@@ -116,6 +118,6 @@ pip install .
 
 ## License
 
-MIT
-
 &copy; 2018 Matthew Fox
+
+[MIT](https://github.com/mattfox/drf-form-bootstrap-4/blob/master/LICENSE)

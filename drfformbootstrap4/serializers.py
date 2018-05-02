@@ -1,5 +1,5 @@
 """
-These resources are for the demo page used in development.
+These resources are for tests and the demo page used in development.
 """
 from rest_framework import serializers
 from django.utils import timezone

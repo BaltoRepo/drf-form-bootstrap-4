@@ -1,3 +1,6 @@
+"""
+These resources are for tests and the demo page used in development.
+"""
 from django.urls import path
 from . import views
 from django.views.generic import TemplateView

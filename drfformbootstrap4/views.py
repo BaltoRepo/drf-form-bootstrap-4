@@ -1,3 +1,6 @@
+"""
+These resources are for tests and the demo page used in development.
+"""
 from .serializers import DemoSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
