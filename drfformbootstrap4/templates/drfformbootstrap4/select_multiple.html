@@ -7,7 +7,7 @@
   {{ field.choices|yesno:",disabled" }}
   class="
     form-control
-    {% if field.errors %}is-invalid{% endif %}
+    {% if field.errors %}is-invalid{% elif field.parent.initial_data %}is-valid{% endif %}
   "
   name="{{ field.name }}"
   id="id_{{ field.name }}"

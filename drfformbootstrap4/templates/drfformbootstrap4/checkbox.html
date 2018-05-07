@@ -4,7 +4,7 @@
   id="id_{{ field.name }}"
   class="
     form-check-input
-    {% if field.errors %}is-invalid{% endif %}
+    {% if field.errors %}is-invalid{% elif field.parent.initial_data %}is-valid{% endif %}
   "
   {% if field.value %}checked{% endif %}
 >

@@ -5,7 +5,7 @@
   id="id_{{ field.name }}"
   class="
     custom-select
-    {% if field.errors %}is-invalid{% endif %}
+    {% if field.errors %}is-invalid{% elif field.parent.initial_data %}is-valid{% endif %}
   "
 >
   {% if field.allow_null or field.allow_blank %}
