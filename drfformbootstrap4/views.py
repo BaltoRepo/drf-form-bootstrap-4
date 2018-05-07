@@ -17,9 +17,11 @@ class DemoForms(APIView):
 
     def post(self, request):
         serializer = DemoSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response({'serializer': serializer})
-        return redirect('root')
+        serializer.is_valid()
+        # Normally you'd do something different when the serializer is
+        # valid vs. when it's invalid, but here
+        # we will just show the valid serializer again.
+        return Response({'serializer': serializer})
 
 
 class DemoVertical(DemoForms):
