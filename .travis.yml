@@ -3,8 +3,6 @@ python:
   - "2.7"
   - "3.5"
   - "3.6"
-install:
-  - pip install -r requirements-dev.txt; make install
 stages:
   - name: test
 #  - name: deploy
@@ -12,7 +10,11 @@ stages:
 jobs:
   include:
     - stage: test
-      script: ./coverage.sh
-    - script: make lint
+      install:
+        - pip install -r requirements-dev.txt
+        - make install
+      script:
+        - ./coverage.sh
+        - make lint
 #    - stage: deploy
 #      script: ./deploy
