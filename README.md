@@ -1,6 +1,6 @@
 # drf-form-bootstrap-4
 
-[![PyPI version](https://badge.fury.io/py/drf-form-bootstrap-4.svg)](https://badge.fury.io/py/drf-form-bootstrap-4)
+[![PyPI version](https://badge.fury.io/py/drf-form-bootstrap-4.svg)](https://badge.fury.io/py/drf-form-bootstrap-4) [![Build Status](https://travis-ci.org/mattfox/drf-form-bootstrap-4.svg?branch=master)](https://travis-ci.org/mattfox/drf-form-bootstrap-4)
 
 Bootstrap 4 templates for [Django REST Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
 
