@@ -1,0 +1,4 @@
+# These are requirements for development and testing only.
+django-debug-toolbar
+coverage
+flake8

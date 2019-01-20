@@ -103,7 +103,7 @@ Pretty standard: fork this repo, make changes, make a GitHub pull request.
 There are demo pages showing a variety of form fields and layouts. To use it, first install its dependencies:
 
 ```
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 ```
 
 Then run the server:
