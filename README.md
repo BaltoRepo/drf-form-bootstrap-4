@@ -73,6 +73,8 @@ Note that `inline` is less well-tested than the others, and at the moment the er
 
 ### Additional Options
 
+Use the `style` field on your serializer to change the appearance of a field.
+
 To display a field as text instead of as a field:
 
 ```
@@ -101,7 +103,7 @@ Pretty standard: fork this repo, make changes, make a GitHub pull request.
 There are demo pages showing a variety of form fields and layouts. To use it, first install its dependencies:
 
 ```
-pip install django-debug-toolbar
+pip install -r requirements-dev.txt
 ```
 
 Then run the server:
@@ -113,7 +115,7 @@ make runserver
 When using this `runserver`, you don't need to install `drfformbootstrap4` into your virtualenv before seeing changes. However if you want to see your changes reflected in a different application using the same virtualenv, install it with:
 
 ```
-pip install .
+make install
 ```
 
 ## License

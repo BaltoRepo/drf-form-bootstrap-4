@@ -1,0 +1,19 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+install:
+  - pip install -r requirements-dev.txt
+stages:
+  - name: test
+#  - name: deploy
+#    if: branch = master
+jobs:
+  include:
+    - stage: test
+      script: ./coverage.sh
+    - script: make lint
+#    - stage: deploy
+#      script: ./deploy
