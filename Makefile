@@ -15,22 +15,17 @@ clean-pyc: ## remove Python file artifacts
 
 clean: clean-build clean-pyc
 
-coverage: # Check code coverage quickly with the default Python
-	# Coverage config file at .coveragerc
-	coverage run --source drfformbootstrap4 django-admin.py test --settings=test_settings
-	coverage report -m
-
 install: clean
 	python setup.py install
 
 runserver: clean
-	PYTHONPATH=$(shell pwd) django-admin runserver --settings=runserver_settings
+	PYTHONPATH=$(shell pwd) django-admin.py runserver --settings=runserver_settings
 
 lint: ## check style with flake8
-	flake8 .
+	flake8 drfformbootstrap4
 
 test: clean
-	PYTHONPATH=$(shell pwd) django-admin test . --settings=test_settings
+	PYTHONPATH=$(shell pwd) django-admin.py test . --settings=test_settings
 
 sdist: test lint
 	python setup.py sdist

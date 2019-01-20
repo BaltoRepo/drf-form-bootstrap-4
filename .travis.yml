@@ -1,0 +1,23 @@
+language: python
+python:
+  - "3.5"
+  - "3.6"
+
+stages:
+  - name: test
+  - name: deploy
+    if: branch = master
+
+install:
+  - pip install -r requirements.txt
+  - make install
+script:
+  - ./coverage.sh
+  - make lint
+
+jobs:
+  include:
+    - stage: deploy
+      script:
+        - python setup.py sdist
+        - twine upload dist/*.tar.gz
