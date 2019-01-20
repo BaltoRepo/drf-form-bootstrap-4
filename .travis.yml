@@ -3,9 +3,8 @@ python:
   - "2.7"
   - "3.5"
   - "3.6"
-  - "3.7"
 install:
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements-dev.txt; make install
 stages:
   - name: test
 #  - name: deploy
