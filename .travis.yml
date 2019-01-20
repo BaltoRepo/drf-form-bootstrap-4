@@ -18,6 +18,7 @@ script:
 jobs:
   include:
     - stage: deploy
+      install: pip install twine
       script:
         - python setup.py sdist
         - twine upload dist/*.tar.gz

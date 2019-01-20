@@ -118,6 +118,8 @@ When using this `runserver`, you don't need to install `drfformbootstrap4` into 
 make install
 ```
 
+Builds are here: https://travis-ci.org/mattfox/drf-form-bootstrap-4
+
 ## License
 
 &copy; 2018 Matthew Fox
