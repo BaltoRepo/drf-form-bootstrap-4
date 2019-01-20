@@ -21,4 +21,5 @@ jobs:
       install: pip install twine
       script:
         - python setup.py sdist
+        - echo ${TWINE_USERNAME}
         - twine upload --verbose dist/*.tar.gz
