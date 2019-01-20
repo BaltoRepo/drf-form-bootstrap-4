@@ -1,12 +1,12 @@
 language: python
 python:
-  - "2.7"
   - "3.5"
   - "3.6"
-#stages:
-#  - name: test
-#  - name: deploy
-#    if: branch = master
+
+stages:
+  - name: test
+  - name: deploy
+    if: branch = master
 
 install:
   - pip install -r requirements.txt
@@ -15,8 +15,7 @@ script:
   - ./coverage.sh
   - make lint
 
-#jobs:
-#  include:
-#    - stage: test
-#    - stage: deploy
-#      script: ./deploy
+jobs:
+  include:
+    - stage: deploy
+      script: ./deploy
