@@ -21,4 +21,4 @@ jobs:
       install: pip install twine
       script:
         - python setup.py sdist
-        - twine upload --verbose dist/*.tar.gz
+        - twine upload --repository-url https://balto.baltorepo.com/open-source/python/python/upload/ --verbose dist/*.tar.gz

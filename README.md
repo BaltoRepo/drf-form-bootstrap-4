@@ -6,7 +6,7 @@ Bootstrap 4 templates for [Django REST Framework `render_form` tag](http://www.d
 
 ## Requirements
 
-Tested with Django 2.0, DRF 3.8, Python 3.6. Almost certainly works in earlier versions.
+Tested with Django 2.2, DRF 3.9, Python 3.6 & 3.5. Almost certainly works in earlier versions.
 
 ## Installation
 
@@ -29,7 +29,7 @@ INSTALLED_APPS = (
 
 Like the template packs in Django REST Framework, this supports three layouts:
 
-##### Vertical
+#### Vertical
 
     <form method="POST" novalidate>
       {% csrf_token %}
@@ -42,7 +42,7 @@ Like the template packs in Django REST Framework, this supports three layouts:
     </form>
 
 
-##### Horizontal
+#### Horizontal
 
 
     <form method="POST" novalidate>
@@ -57,7 +57,7 @@ Like the template packs in Django REST Framework, this supports three layouts:
 
 
 
-##### Inline
+#### Inline
 
 Note that `inline` is less well-tested than the others, and at the moment the error states don't  render properly. If this is a problem for you, [add a comment to this issue](https://github.com/mattfox/drf-form-bootstrap-4/issues/2).
 
@@ -122,6 +122,6 @@ Builds are here: https://travis-ci.org/mattfox/drf-form-bootstrap-4
 
 ## License
 
-&copy; 2018 Matthew Fox
+&copy; 2019 Matthew Fox
 
 [MIT](https://github.com/mattfox/drf-form-bootstrap-4/blob/master/LICENSE)
