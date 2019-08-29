@@ -10,11 +10,7 @@ Tested with Django 2.2, DRF 3.9, Python 3.6 & 3.5. Almost certainly works in ear
 
 ## Installation
 
-From PyPI:
-
-```
-pip install drf-form-bootstrap-4
-```
+See instructions at [our Python registry](https://balto.baltorepo.com/open-source/python/packages/drf-form-bootstrap-4/) for installation with `pip` or in a `requirements.txt` file.
 
 Add `drfformbootstrap4` to your `INSTALLED_APPS` setting.
 
