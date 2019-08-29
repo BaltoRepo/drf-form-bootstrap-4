@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.md')).read()
 
 setup(
     name='drf-form-bootstrap-4',
-    version='0.5.1',
+    version='0.5.2',
     packages=['drfformbootstrap4'],
     description='Bootstrap 4 templates for Django Rest '
                 'Framework `render_form` tag',
@@ -22,4 +22,5 @@ setup(
     ],
     zip_safe=False,  # Zipping prevents Django from finding migrations.
     include_package_data=True,
+    platforms=['Windows', 'Mac', 'Unix']
 )
