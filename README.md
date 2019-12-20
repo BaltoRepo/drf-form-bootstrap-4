@@ -1,6 +1,6 @@
 # drf-form-bootstrap-4
 
-[![Build Status](https://travis-ci.org/mattfox/drf-form-bootstrap-4.svg?branch=master)](https://travis-ci.org/mattfox/drf-form-bootstrap-4)
+[![Build Status](https://travis-ci.org/BaltoRepo/drf-form-bootstrap-4.svg?branch=master)](https://travis-ci.org/BaltoRepo/drf-form-bootstrap-4)
 
 Bootstrap 4 templates for [Django REST Framework `render_form` tag](http://www.django-rest-framework.org/topics/html-and-forms/).
 
@@ -114,7 +114,7 @@ When using this `runserver`, you don't need to install `drfformbootstrap4` into 
 make install
 ```
 
-Builds are here: https://travis-ci.org/mattfox/drf-form-bootstrap-4
+Builds are here: https://travis-ci.org/BaltoRepo/drf-form-bootstrap-4
 
 ## License
 
