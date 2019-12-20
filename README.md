@@ -55,7 +55,7 @@ Like the template packs in Django REST Framework, this supports three layouts:
 
 #### Inline
 
-Note that `inline` is less well-tested than the others, and at the moment the error states don't  render properly. If this is a problem for you, [add a comment to this issue](https://github.com/mattfox/drf-form-bootstrap-4/issues/2).
+Note that `inline` is less well-tested than the others, and at the moment the error states don't  render properly. If this is a problem for you, [add a comment to this issue](https://github.com/BaltoRepo/drf-form-bootstrap-4/issues/2).
 
     <form method="POST" novalidate class="form-inline">
       {% csrf_token %}
@@ -120,4 +120,4 @@ Builds are here: https://travis-ci.org/mattfox/drf-form-bootstrap-4
 
 &copy; 2019 Matthew Fox
 
-[MIT](https://github.com/mattfox/drf-form-bootstrap-4/blob/master/LICENSE)
+[MIT](https://github.com/BaltoRepo/drf-form-bootstrap-4/blob/master/LICENSE)

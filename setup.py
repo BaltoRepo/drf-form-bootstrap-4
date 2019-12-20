@@ -13,8 +13,8 @@ setup(
     long_description=README,
     long_description_content_type='text/markdown',
     author='Matt Fox',
-    author_email='matt@tansen.ca',
-    url='https://github.com/mattfox/drf-form-bootstrap-4',
+    author_email='matt@getbalto.com',
+    url='https://github.com/BaltoRepo/drf-form-bootstrap-4',
     license='MIT',
     install_requires=[
         'Django',
