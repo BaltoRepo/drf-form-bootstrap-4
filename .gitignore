@@ -2,6 +2,6 @@ build/
 dist/
 *egg-info
 *.pyc
-.idea
+.idea/
 venv
 .coverage
